@@ -3,7 +3,9 @@ FROM pataquets/ubuntu:xenial
 RUN \
   apt-get update && \
   DEBIAN_FRONTEND=noninteractive \
-    apt-get install -y apt-cacher-ng \
+    apt-get install -y \
+      apt-cacher-ng \
+      ca-certificates \
   && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
