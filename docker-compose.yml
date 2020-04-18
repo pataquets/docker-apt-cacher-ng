@@ -1,8 +1,8 @@
 apt-cacher-ng:
   container_name: apt-cacher-ng
   image: pataquets/apt-cacher-ng
-#  build: .
+#  command:
+#    - "-v"
   restart: unless-stopped
-#  net: host
   ports:
     - "3142:3142"
