@@ -4,5 +4,11 @@ apt-cacher-ng:
 #  command:
 #    - "-v"
   restart: unless-stopped
+  environment:
+    - APT_CACHER_NG_TMP_DIR
   ports:
     - "3142:3142"
+  volumes:
+    # If not specified otherwise via explicit configuration directives
+    # or config file, 'LogDir' and 'CacheDir' both default to '/var/tmp/'.
+    - ${APT_CACHER_NG_TMP_DIR}:/var/tmp/
