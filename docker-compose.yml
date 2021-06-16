@@ -1,14 +1,17 @@
 apt-cacher-ng:
   container_name: apt-cacher-ng
   image: pataquets/apt-cacher-ng
-#  command:
-#    - "Remap-archive: archive.ubuntu.com ; https://mirrors.edge.kernel.org"
-#    - "Remap-security: security.ubuntu.com ; https://mirrors.edge.kernel.org"
-#    - "Remap-archive: archive.ubuntu.com ; http://es.archive.ubuntu.com"
-#    - "-v"
+  # build: .
+  # command:
+  #   # You can also place the directives below in a 'docker-compose.override.yml' file:
+  #   - "Remap-archive: archive.ubuntu.com ; https://mirrors.edge.kernel.org"
+  #   - "Remap-security: security.ubuntu.com ; https://mirrors.edge.kernel.org"
+  #   - "Remap-archive: archive.ubuntu.com ; http://es.archive.ubuntu.com"
+  #   - "-v"
   restart: unless-stopped
   environment:
     - APT_CACHER_NG_TMP_DIR
+  # net: host
   ports:
     - "3142:3142"
   volumes:
