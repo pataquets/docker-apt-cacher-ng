@@ -17,4 +17,4 @@ apt-cacher-ng:
   volumes:
     # If not specified otherwise via explicit configuration directives
     # or config file, 'LogDir' and 'CacheDir' both default to '/var/tmp/'.
-    - ${APT_CACHER_NG_TMP_DIR}:/var/tmp/
+    - ${APT_CACHER_NG_TMP_DIR}:/var/cache/apt-cacher-ng/
